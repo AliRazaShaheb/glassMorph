@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+section {
+  position: relative;
+  background-color: #161623;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section::before {
+  content: "";
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background: linear-gradient(yellow, red);
+  border-radius: 50%;
+  top: 2rem;
+  left: 2rem;
+}
+section::after {
+  content: "";
+  width: 250px;
+  height: 250px;
+  bottom: 4rem;
+  right: 4rem;
+  position: absolute;
+  background: linear-gradient(blue, green);
+  border-radius: 50%;
+}
+section .card {
+  position: relative;
+  min-width: 20rem;
+  min-height: 30rem;
+  background: rgba(43, 23, 23, 0.1);
+  box-shadow: 0 1.3rem 3rem rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  z-index: 1;
+  backdrop-filter: blur(1.2rem);
+  padding: 1rem;
+  color: white;
+}
+section .card h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+section .card .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.4s;
+  height: 5rem;
+  overflow: hidden;
+}
+section .card .list:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #161623;
+  box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.5);
+  transform: scale(1.2) translateX(2rem) translateY(-1rem);
+}
+
+section .card .list .user-img {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+}
+section .card .list .user-img img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+section .card .list .user-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 0;
+  width: 100%;
+  position: relative;
+}
+section .card .list .user-content .rank {
+  position: absolute;
+  right: 0;
+  margin-right: 0.5rem;
+  transition: 0.4s;
+  transform: translateX(3rem);
+  color: black;
+}
+section .card .list .user-content .rank small {
+  color: blueviolet;
+}
+section .card .list .user-content h4 {
+  font-size: 1.2rem;
+  margin: 0.4rem 0;
+}
+section .card .list .user-content p {
+  font-size: 0.8rem;
+  color: blueviolet;
+}
+section .card .list:hover .user-content .rank {
+  transform: translateX(0);
+}
